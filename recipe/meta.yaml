@@ -1,25 +1,22 @@
-{% set name = "serverfiles" %}
 {% set version = "0.3.0" %}
-{% set sha256 = "ce38e1dc3518a16b2490f7b84b4ce829f2d6685596c1a3f0fdedbe06d13685ec" %}
 
 package:
-  name: {{ name|lower }}
+  name: serverfiles
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/s/serverfiles/serverfiles-{{ version }}.tar.gz
+  sha256: ce38e1dc3518a16b2490f7b84b4ce829f2d6685596c1a3f0fdedbe06d13685ec
 
 build:
   number: 0
   noarch: python
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - requests >=2.11.1
