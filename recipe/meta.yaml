@@ -1,4 +1,4 @@
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: serverfiles
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/serverfiles/serverfiles-{{ version }}.tar.gz
-  sha256: ce38e1dc3518a16b2490f7b84b4ce829f2d6685596c1a3f0fdedbe06d13685ec
+  sha256: 5e10fc32e758791e3735bc08bce2ed4702a83b1e45ab96c5d59cc8aeecfbebe1
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
@@ -30,7 +30,7 @@ about:
   license: GPL-3
   license_family: GPL
   license_file: LICENSE.txt
-  summary: 'An utility that accesses files on a HTTP server and stores them locally for reuse'
+  summary: An utility that accesses files on a HTTP server and stores them locally for reuse
 
   doc_url: https://serverfiles.readthedocs.io/en/latest/
   dev_url: https://github.com/biolab/serverfiles/
