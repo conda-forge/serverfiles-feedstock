@@ -22,6 +22,8 @@ requirements:
     - requests >=2.11.1
 
 test:
+  requires:
+    - pip
   imports:
     - serverfiles
   commands:
