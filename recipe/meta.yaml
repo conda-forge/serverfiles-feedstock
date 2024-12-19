@@ -5,25 +5,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/serverfiles/serverfiles-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/s/serverfiles/serverfiles-{{ version }}.tar.gz
   sha256: 5e10fc32e758791e3735bc08bce2ed4702a83b1e45ab96c5d59cc8aeecfbebe1
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - requests >=2.11.1
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - serverfiles
   commands:
