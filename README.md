@@ -148,4 +148,6 @@ Feedstock Maintainers
 =====================
 
 * [@astaric](https://github.com/astaric/)
+* [@lanzagar](https://github.com/lanzagar/)
+* [@markotoplak](https://github.com/markotoplak/)
 
